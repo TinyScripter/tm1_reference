@@ -2,9 +2,9 @@
   "name": "tm1-reference",
   "displayName": "TM1 Reference",
   "description": "Reference for IBM Planning Analytics (TM1): TurboIntegrator functions and Rules functions, in English and German. The documentation is downloaded on request and then works offline.",
-  "version": "0.9.1",
-  "publisher": "swalczyk",
-  "license": "UNLICENSED",
+  "version": "0.1.0",
+  "publisher": "kleinabersmart",
+  "license": "GPLv3",
   "engines": {
     "vscode": "^1.85.0"
   },
