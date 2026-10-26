@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2026">
+
+<meta name="description" content="CellPutN sends a numeric value to a cube cell.">
+<meta name="geo.country" content="ZZ">
+<meta name="DC.Title" content="CellPutN"><meta name="abstract" content="CellPutN sends a numeric value to a cube cell."><meta name="DC.subject" content="CellPutN"><meta name="keywords" content="CellPutN"><meta name="DC.Relation" scheme="URI" content="c_cubemanipulationturbointegratorfunctions_n7121e.html"><meta name="DC.Audience.Type" content="administrator"><meta name="DC.Audience.Type" content="modeler"><meta name="DC.Audience.Type" content="analyst"><meta name="copyrlast" content="2025"><meta name="copyrfirst" content="2007"><meta name="third_party_text" content="MICROSOFT,OPENGROUP"><meta name="product_version" content="2.1.0"><meta name="product_info" content="IBM Planning Analytics Version 2.0.0"><meta name="online_title_bar" content="TM1 Reference"><meta name="book_title" content="TM1 Reference"><meta name="product" content="paw,pawl,paplus"><meta name="DC.Language" content="en-us">
+<script>
+		  digitalData = {
+		  page: {
+		  pageInfo: {
+		  language: "en-us",
+
+		  version: "v18",
+		  ibm: {
+		  country: "ZZ",
+		  type: "CT701"
+		  
+		  }
+		  }
+		  }
+		  };
+		</script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+
+<link rel="Start" href="c_cubemanipulationturbointegratorfunctions_n7121e.html">
+<title>Assign a numeric value to a cell using TI function CellPutN</title>
+</head>
+<body id="tm1_ref_tifun_cellputn"><main role="main"><article role="article" aria-labelledby="tm1_ref_tifun_cellputn__title__1">
+<h1 class="topictitle1" id="tm1_ref_tifun_cellputn__title__1">CellPutN</h1>
+
+
+
+
+<div class="body refbody"><div class="abstract">
+<p class="shortdesc">CellPutN sends a numeric value to a cube cell.</p>
+
+<p>This function is valid in TM1® TurboIntegrator processes
+only.</p>
+
+
+</div>
+
+<section class="section refsyn" role="region" aria-labelledby="tm1_ref_tifun_cellputn__title__2"><h2 class="sectiontitle" id="tm1_ref_tifun_cellputn__title__2">Syntax</h2>
+
+<pre class="codeblock"><code>CellPutN(x, Cube, e1, e2 [,..., en]);</code></pre>
+
+<div class="tablenoborder"><table summary="" class="defaultstyle"><caption><span class="tablecap">Table 1. CellPutN arguments</span></caption><colgroup><col><col></colgroup><thead style="text-align:left;">
+<tr>
+<th id="tm1_ref_tifun_cellputn__entry__1">
+<p>Argument</p>
+
+</th>
+
+<th id="tm1_ref_tifun_cellputn__entry__2">
+<p>Description</p>
+
+</th>
+
+</tr>
+
+</thead>
+<tbody>
+<tr>
+<td headers="tm1_ref_tifun_cellputn__entry__1 ">
+<p>x</p>
+
+</td>
+
+<td headers="tm1_ref_tifun_cellputn__entry__2 ">
+<p>A numeric value.</p>
+
+</td>
+
+</tr>
+
+<tr>
+<td headers="tm1_ref_tifun_cellputn__entry__1 ">
+<p>Cube</p>
+
+</td>
+
+<td headers="tm1_ref_tifun_cellputn__entry__2 ">
+<p>The name of the cube to which you want to send the value.</p>
+
+</td>
+
+</tr>
+
+<tr>
+<td headers="tm1_ref_tifun_cellputn__entry__1 ">
+<p>e1, e2, ..., en </p>
+
+</td>
+
+<td headers="tm1_ref_tifun_cellputn__entry__2 ">
+<p>Dimension element names that define the intersection of the cube to receive the value.</p>
+
+<p>Arguments e1 through en are sequence-sensitive. e1 must be an element from the first dimension of
+the cube, e2 must be an element from the second dimension, and so on. These arguments can also be
+the names of aliases for dimension elements or TurboIntegrator variables.</p>
+
+</td>
+
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="note"><span class="notetitle">Note:</span> If you supply invalid arguments to the <code class="ph codeph">CellPutN()</code> function in a
+TurboIntegrator process when the cube does not exist, an error is sent to the
+<span class="ph filepath">tm1server.log</span>.</div>
+
+</section>
+
+<div class="example"><h2 class="sectiontitle" id="tm1_ref_tifun_cellputn__title__4">Example</h2>
+
+<pre class="codeblock"><code>CellPutN(12345, 'y2ksales', 'Actual', 'Argentina', 'S Series 1.8L Sedan', 'Sales', 'Jan');</code></pre>
+<p>This example sends the value 12345 to the intersection of the Actual, Argentina, S Series 1.8L
+Sedan, Sales, and Jan elements in the y2ksales cube.</p>
+
+</div>
+
+</div>
+
+
+<aside role="complementary" aria-labelledby="tm1_ref_tifun_cellputn__title__1"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="c_cubemanipulationturbointegratorfunctions_n7121e.html" title="These functions pertain to manipulating cubes.">Cube Manipulation TurboIntegrator Functions</a></div>
+</div>
+</nav></aside></article></main><script type="text/javascript"  src="/Q0EYpQGRjE/LthfXP/JVPr/3wVa4QLzDXb6rNaw/Ij1uUB8pAw/cxxIbAZ/zfVg"></script></body></html>

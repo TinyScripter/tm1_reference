@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2026">
+
+<meta name="description" content="DB returns a value from a cube in a Planning Analytics database. DB returns a numeric value if used in a numeric expression and a string value if used in a string expression.">
+<meta name="geo.country" content="ZZ">
+<meta name="DC.Title" content="DB"><meta name="abstract" content="DB returns a value from a cube in a Planning Analytics database. DB returns a numeric value if used in a numeric expression and a string value if used in a string expression."><meta name="DC.Relation" scheme="URI" content="c_id_rulesfunctions_n80006_168cubedatarulesfunctions.html"><meta name="DC.Relation" scheme="URI" content="https://www.ibm.com/docs/en/planning-analytics/2.0.0?topic=statements-using-cube-references"><meta name="DC.Audience.Type" content="administrator"><meta name="DC.Audience.Type" content="modeler"><meta name="DC.Audience.Type" content="analyst"><meta name="copyrlast" content="2025"><meta name="copyrfirst" content="2007"><meta name="third_party_text" content="MICROSOFT,OPENGROUP"><meta name="product_version" content="2.1.0"><meta name="product_info" content="IBM Planning Analytics Version 2.0.0"><meta name="online_title_bar" content="TM1 Reference"><meta name="book_title" content="TM1 Reference"><meta name="product" content="paw,pawl,paplus"><meta name="DC.Language" content="en-us">
+<script>
+		  digitalData = {
+		  page: {
+		  pageInfo: {
+		  language: "en-us",
+
+		  version: "v18",
+		  ibm: {
+		  country: "ZZ",
+		  type: "CT701"
+		  
+		  }
+		  }
+		  }
+		  };
+		</script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+
+<link rel="Start" href="c_id_rulesfunctions_n80006_168cubedatarulesfunctions.html">
+<title>DB</title>
+</head>
+<body id="tm1_ref_db"><main role="main"><article role="article" aria-labelledby="tm1_ref_db__title__1">
+<h1 class="topictitle1" id="tm1_ref_db__title__1">DB</h1>
+
+
+<div class="body refbody"><div class="abstract">
+<p class="shortdesc">DB returns a value from a cube in a <span class="keyword" translate="no">Planning Analytics</span> database. DB returns a numeric value if used
+in a numeric expression and a string value if used in a string expression.</p>
+
+<p>This function is valid only in rules. Use of this function in a TurboIntegrator process will
+result in an error. </p>
+
+</div>
+
+<section class="section refsyn" role="region" aria-labelledby="tm1_ref_db__title__2"><h2 class="sectiontitle" id="tm1_ref_db__title__2">Syntax</h2>
+
+<pre class="codeblock"><code>DB(cube, e1, e2, [...e256])</code></pre>
+</section>
+
+<section class="section refsyn" role="region" aria-labelledby="tm1_ref_db__title__3"><h2 class="sectiontitle" id="tm1_ref_db__title__3">Parameters</h2>
+
+<dl class="parml">
+
+<dt class="pt dlterm">cube</dt>
+
+<dd class="pd">
+<p>The name of the cube from which to retrieve the value.</p>
+
+</dd>
+
+
+
+<dt class="pt dlterm">e1,...en</dt>
+
+<dd class="pd">
+<p>Dimension element names that define the intersection containing the value to be retrieved.</p>
+
+<p>Arguments e1 through en are sequence-sensitive. e1 must be an element from the first dimension of
+the cube, e2 must be an element from the second dimension, and so on.</p>
+
+</dd>
+
+
+</dl>
+
+</section>
+
+<div class="example"><h2 class="sectiontitle" id="tm1_ref_db__title__4">Example</h2>
+
+<p>In this example, Budget is the cube name, and the function returns the value at the intersection
+of California, 15" Flat Panel Monitors, Net Sales, and January.</p>
+
+<pre class="codeblock"><code>DB('Budget', 'California', '15" Flat Panel Monitors', 'Net Sales', 'January')</code></pre>
+<p>When used to reference multi-hierarchy dimensions, you must specify the particular hierarchy. In
+this example, the Category2 element exists in the ByCategory hierarchy of the ProductsCube
+dimension.</p>
+
+<pre class="codeblock"><code>DB('ProductsCube', 'ByCategory':'Category2',...)</code></pre>
+</div>
+
+</div>
+
+
+<aside role="complementary" aria-labelledby="tm1_ref_db__title__1"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="c_id_rulesfunctions_n80006_168cubedatarulesfunctions.html" title="Rules functions that work on cube data.">Cube data rules functions</a></div>
+</div>
+
+<div class="linklist relinfo" lang="en-us"><h2 class="linkheading">Related information</h2>
+<ul><li><img src="sout.gif" alt=""><a href="https://www.ibm.com/docs/en/planning-analytics/2.0.0?topic=statements-using-cube-references" rel="noopener" target="_blank" title="(Opens in a new tab or window)">Using cube references</a></li>
+</ul></div>
+</nav></aside>
+</article></main><script type="text/javascript"  src="/Q0EYpQGRjE/LthfXP/JVPr/3wVa4QLzDXb6rNaw/Ij1uUB8pAw/cxxIbAZ/zfVg"></script></body></html>

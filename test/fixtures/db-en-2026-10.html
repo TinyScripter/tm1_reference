@@ -1,0 +1,48 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2026"><meta name="generator" content="DITA-OT"><meta name="abstract" content="DB returns a value from a cube in a Planning Analytics database. DB returns a numeric value if used in a numeric expression and a string value if used in a string expression."><meta name="description" content="DB returns a value from a cube in a Planning Analytics database. DB returns a numeric value if used in a numeric expression and a string value if used in a string expression."><title>DB</title><link rel="stylesheet" type="text/css" href="commonltr.css"></head><body id="tm1_ref_db"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+<h1 id="tm1_ref_db__title__1" class="title topictitle">DB</h1>
+
+<div class="body refbody"><div class="abstract">
+<p class="shortdesc">DB returns a value from a cube in a <span class="keyword" translate="no">Planning Analytics</span> database. DB returns a numeric value if used
+in a numeric expression and a string value if used in a string expression.</p>
+<p class="p">This function is valid only in rules. Use of this function in a TurboIntegrator process will
+result in an error. </p>
+</div>
+<section class="section refsyn"><h2 id="tm1_ref_db__title__2" class="title sectiontitle">Syntax</h2>
+
+<pre class="pre codeblock"><code>DB(cube, e1, e2, [...e256])</code></pre>
+</section>
+<section class="section refsyn"><h2 id="tm1_ref_db__title__3" class="title sectiontitle">Parameters</h2>
+
+<dl class="dl parml">
+
+<dt class="dt pt dlterm">cube</dt>
+<dd class="dd pd">
+<p class="p">The name of the cube from which to retrieve the value.</p>
+</dd>
+
+
+<dt class="dt pt dlterm">e1,...en</dt>
+<dd class="dd pd">
+<p class="p">Dimension element names that define the intersection containing the value to be retrieved.</p>
+<p class="p">Arguments e1 through en are sequence-sensitive. e1 must be an element from the first dimension of
+the cube, e2 must be an element from the second dimension, and so on.</p>
+</dd>
+
+</dl>
+</section>
+<div class="example"><h2 id="tm1_ref_db__title__4" class="title sectiontitle">Example</h2>
+
+<p class="p">In this example, Budget is the cube name, and the function returns the value at the intersection
+of California, 15" Flat Panel Monitors, Net Sales, and January.</p>
+<pre class="pre codeblock"><code>DB('Budget', 'California', '15" Flat Panel Monitors', 'Net Sales', 'January')</code></pre>
+<p class="p">When used to reference multi-hierarchy dimensions, you must specify the particular hierarchy. In
+this example, the Category2 element exists in the ByCategory hierarchy of the ProductsCube
+dimension.</p>
+<pre class="pre codeblock"><code>DB('ProductsCube', 'ByCategory':'Category2',...)</code></pre>
+</div>
+</div>
+
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" data-hd-product="paw" href="c_id_rulesfunctions_n80006_168cubedatarulesfunctions.html" title="Rules functions that work on cube data.">Cube data rules functions</a></div></div><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" data-hd-product="db11" href="c_id_rulesfunctions_n80006_168cubedatarulesfunctions.html" title="Rules functions that work on cube data.">Cube data rules functions</a></div></div><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="https://www.ibm.com/docs/en/planning-analytics/2.0.0?topic=statements-using-cube-references" target="_blank" rel="external noopener">Using cube references</a></li></ul></div></nav>
+</article></main><script type="text/javascript"  src="/5-Is/3fSR/XTDrY/BiKPA/3GhOVkSVXrzXtr/HndgAQ/fE/5sZSJlHXI"></script></body></html>

@@ -1,0 +1,126 @@
+{
+  "name": "tm1-reference",
+  "displayName": "TM1 Reference",
+  "description": "Reference for IBM Planning Analytics (TM1): TurboIntegrator functions and Rules functions, in English and German. The documentation is downloaded on request and then works offline.",
+  "version": "0.9.1",
+  "publisher": "swalczyk",
+  "license": "UNLICENSED",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "tm1",
+    "planning analytics",
+    "turbointegrator",
+    "rules",
+    "reference"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "tm1Reference",
+          "title": "TM1 Reference",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "tm1Reference": [
+        {
+          "type": "webview",
+          "id": "tm1Reference.view",
+          "name": "TM1 Reference"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "tm1Reference.downloadDocs",
+        "title": "TM1 Reference: Download / Update Documentation",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "tm1Reference.importDocs",
+        "title": "TM1 Reference: Import Documentation from File"
+      },
+      {
+        "command": "tm1Reference.checkConnection",
+        "title": "TM1 Reference: Check Connection"
+      },
+      {
+        "command": "tm1Reference.search",
+        "title": "TM1 Reference: Search"
+      },
+      {
+        "command": "tm1Reference.openInEditor",
+        "title": "TM1 Reference: Open in Editor",
+        "icon": "$(link-external)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "tm1Reference.downloadDocs",
+          "when": "view == tm1Reference.view",
+          "group": "navigation@1"
+        },
+        {
+          "command": "tm1Reference.openInEditor",
+          "when": "view == tm1Reference.view",
+          "group": "navigation@2"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "TM1 Reference",
+      "properties": {
+        "tm1Reference.language": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "en",
+            "de"
+          ],
+          "enumDescriptions": [
+            "Use the display language of VS Code",
+            "English",
+            "Deutsch"
+          ],
+          "default": "auto",
+          "description": "Language of the documentation when no language has been chosen in the view yet. Once you pick a language in the dropdown it is remembered and used the next time (changing this setting resets that choice). 'auto' = display language of VS Code. Download and update only fetch the selected language."
+        },
+        "tm1Reference.insertAsSnippet": {
+          "type": "boolean",
+          "default": true,
+          "description": "Insert adds one tab stop per argument, e.g. CellPutN(${1:x}, ${2:Cube}, ...), in syntax lines and in examples (quotes around text values stay outside the stop). Turn off to insert the text unchanged."
+        },
+        "tm1Reference.webviewPasteDelayMs": {
+          "type": "number",
+          "default": 400,
+          "minimum": 0,
+          "maximum": 5000,
+          "description": "Fallback for inserting into editors that live in a webview and are not handled by TM1 IDE's insert command: milliseconds to wait after focusing the editor before the paste command is sent."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "esbuild src/extension.js --bundle --platform=node --target=node18 --external:vscode --outfile=dist/extension.js",
+    "vscode:prepublish": "npm run build",
+    "test": "node --test test/*.test.js",
+    "fetch-docs": "node scripts/fetch-docs.js",
+    "package": "vsce package --allow-missing-repository",
+    "export-docs": "node scripts/export-docs.js"
+  },
+  "devDependencies": {
+    "cheerio": "^1.2.0",
+    "esbuild": "^0.25.0",
+    "@vscode/vsce": "^3.0.0"
+  }
+}

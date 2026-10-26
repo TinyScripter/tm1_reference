@@ -1,0 +1,67 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2026"><meta name="generator" content="DITA-OT"><meta name="abstract" content="CellPutN sends a numeric value to a cube cell."><meta name="description" content="CellPutN sends a numeric value to a cube cell."><title>CellPutN</title><link rel="stylesheet" type="text/css" href="commonltr.css"></head><body id="tm1_ref_tifun_cellputn"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+<h1 id="tm1_ref_tifun_cellputn__title__1" class="title topictitle">CellPutN</h1>
+
+
+
+<div class="body refbody"><div class="abstract">
+<p class="shortdesc">CellPutN sends a numeric value to a cube cell.</p>
+<p class="p">This function is valid in TM1® TurboIntegrator processes
+only.</p>
+
+</div>
+<section class="section refsyn"><h2 id="tm1_ref_tifun_cellputn__title__2" class="title sectiontitle">Syntax</h2>
+
+<pre class="pre codeblock"><code>CellPutN(x, Cube, e1, e2 [,..., en]);</code></pre>
+<table class="table"><caption><span class="table--title-label">Table 1. </span><span class="title">CellPutN arguments</span></caption><colgroup><col><col></colgroup><thead class="thead">
+<tr class="row">
+<th class="entry" id="tm1_ref_tifun_cellputn__entry__1">
+<p class="p">Argument</p>
+</th>
+<th class="entry" id="tm1_ref_tifun_cellputn__entry__2">
+<p class="p">Description</p>
+</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry" headers="tm1_ref_tifun_cellputn__entry__1">
+<p class="p">x</p>
+</td>
+<td class="entry" headers="tm1_ref_tifun_cellputn__entry__2">
+<p class="p">A numeric value.</p>
+</td>
+</tr>
+<tr class="row">
+<td class="entry" headers="tm1_ref_tifun_cellputn__entry__1">
+<p class="p">Cube</p>
+</td>
+<td class="entry" headers="tm1_ref_tifun_cellputn__entry__2">
+<p class="p">The name of the cube to which you want to send the value.</p>
+</td>
+</tr>
+<tr class="row">
+<td class="entry" headers="tm1_ref_tifun_cellputn__entry__1">
+<p class="p">e1, e2, ..., en </p>
+</td>
+<td class="entry" headers="tm1_ref_tifun_cellputn__entry__2">
+<p class="p">Dimension element names that define the intersection of the cube to receive the value.</p>
+<p class="p">Arguments e1 through en are sequence-sensitive. e1 must be an element from the first dimension of
+the cube, e2 must be an element from the second dimension, and so on. These arguments can also be
+the names of aliases for dimension elements or TurboIntegrator variables.</p>
+</td>
+</tr>
+</tbody></table>
+<div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">If you supply invalid arguments to the <code class="ph codeph">CellPutN()</code> function in a
+TurboIntegrator process when the cube does not exist, an error is sent to the
+<span class="ph filepath">tm1server.log</span>.</div></div>
+</section>
+<div class="example"><h2 id="tm1_ref_tifun_cellputn__title__4" class="title sectiontitle">Example</h2>
+
+<pre class="pre codeblock"><code>CellPutN(12345, 'y2ksales', 'Actual', 'Argentina', 'S Series 1.8L Sedan', 'Sales', 'Jan');</code></pre>
+<p class="p">This example sends the value 12345 to the intersection of the Actual, Argentina, S Series 1.8L
+Sedan, Sales, and Jan elements in the y2ksales cube.</p>
+</div>
+</div>
+
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" data-hd-product="paw" href="c_cubemanipulationturbointegratorfunctions_n7121e.html" title="These functions pertain to manipulating cubes.">Cube Manipulation TurboIntegrator Functions</a></div></div><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" data-hd-product="db11" href="c_cubemanipulationturbointegratorfunctions_n7121e.html" title="These functions pertain to manipulating cubes.">Cube Manipulation TurboIntegrator Functions</a></div></div></nav></article></main><script type="text/javascript"  src="/5-Is/3fSR/XTDrY/BiKPA/3GhOVkSVXrzXtr/HndgAQ/fE/5sZSJlHXI"></script></body></html>
